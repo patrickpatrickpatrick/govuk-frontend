@@ -28,7 +28,7 @@ ErrorSummary.prototype.setFocus = function () {
 
   // Set tabindex to -1 to make the element programmatically focusable, but
   // remove it on blur as the error summary doesn't need to be focused again.
-  $module.setAttribute('tabindex', '-1')
+  $module.setAttribute('tabindex', '0')
 
   $module.addEventListener('blur', function () {
     $module.removeAttribute('tabindex')
