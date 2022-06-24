@@ -38,8 +38,11 @@ $_spacing-directions: (
   @each $scale-point, $scale-map in $govuk-spacing-responsive-scale {
 
     .govuk-\!-#{$property}-#{$scale-point} {
-
       @include _govuk-responsive-spacing($scale-point, $property, "all", true);
+    }
+
+    .govuk-\!-#{$property}-#{$scale-point}--non-responsive {
+      @include _govuk-responsive-spacing($scale-point, $property, "all", true, false, false);
     }
 
     // ... and then an override for each individual direction
@@ -47,6 +50,10 @@ $_spacing-directions: (
 
       .govuk-\!-#{$property}-#{$direction}-#{$scale-point} {
         @include _govuk-responsive-spacing($scale-point, $property, $direction, true);
+      }
+
+      .govuk-\!-#{$property}-#{$direction}-#{$scale-point}--non-responsive {
+        @include _govuk-responsive-spacing($scale-point, $property, $direction, true, false, false);
       }
     }
   }
